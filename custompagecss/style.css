@@ -2,7 +2,7 @@ body
 {
     background-color: #000000;
     color: #fcfcfc;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Philosopher', Arial, sans-serif; /* Corrigido para a fonte do HTML */
     margin: 0;
 }
 
@@ -14,7 +14,7 @@ h1
 
 h2 
 {
-    color: #01b3f9;
+    color: #3701f9; /* Mantido apenas um h2 unificado */
 }
 
 a {
@@ -77,18 +77,19 @@ main
 .card
 {
     background-color: #1a1a1a;
-    padding: 4px;
+    padding: 20px; /* Aumentado para dar respiro ao conteúdo */
     margin-bottom: 26px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 255, 179, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 118, 182, 0.781);
 }
 
 .card:hover
 {
     transform: translateY(-6px);
-    box-shadow: 0 10px 24px rgba(0, 255, 179, 0.4);
+    box-shadow: 0 10px 24px rgba(0, 118, 182, 0.781);
     transition: 0.3s;
 }
+
 th, td 
 {
     border: 1px dashed #01ddc7;
@@ -109,7 +110,7 @@ th
 th:nth-child(3),
 td:nth-child(3) 
 {
-    font-family:"courier new", monospace;
+    font-family: "courier new", monospace;
 }
 
 header
@@ -118,13 +119,13 @@ header
     justify-content: space-between;
     align-items: center;
     background-color: #0703ff54;
-    color:rgb(20, 140, 220);
+    color: rgb(20, 140, 220);
     padding: 16px 32px;
 }
 
 nav a:hover
 {
-    color:#16db04
+    color: #16db04;
 }
 
 nav
@@ -155,11 +156,6 @@ nav a
     border-radius: 20px;
 }
 
-h2
-{
-    color: #3701f9;
-}
-
 .title
 {
     color: #f90101f2;
@@ -183,6 +179,79 @@ img
     gap: 24px;
 }
 
+.escuro
+{
+    background-color: #f5f1ea; /* Tom de creme trigo suave e aconchegante */
+    color: #2b2d42;            /* Texto escuro com excelente leitura */
+}
+
+.escuro header
+{
+    background-color: #e6ded0; /* Cabeçalho em tom de bege/trigo contrastante */
+    color: #2b2d42;
+}
+
+.escuro nav a
+{
+    color: #1d3557;            /* Links do menu escuros e bem visíveis */
+}
+
+.escuro nav a:hover
+{
+    color: #e63946;            /* Cor dos links ao passar o mouse */
+}
+
+.escuro .card
+{
+    background-color: #ffffff; /* Cartões em branco puro para destacar bem o conteúdo */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Sombra suave e limpa */
+}
+
+.escuro h1
+{
+    color: #b5179e;            /* Rosa/magenta vibrante para o título principal */
+}
+
+.escuro h2
+{
+    color: #0077b6;            /* Azul forte e legível para os títulos dos cards */
+}
+
+.escuro .title
+{
+    color: #d90429;            /* Nome do cabeçalho em destaque */
+}
+
+.escuro .copyright
+{
+    color: #5c677d;            /* Texto do rodapé ajustado */
+}
+
+.escuro th
+{
+    background-color: #ffb703; /* Cabeçalho da tabela com tom amarelado/trigo escuro */
+    color: #000000;
+}
+
+.escuro .gostos li 
+{
+    background-color: #0077b6; /* Azul um pouco mais brilhante no tema claro */
+    color: #ffffff;
+}
+
+.escuro .card
+{
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 118, 182, 0.336); /* Sombra suave quando parado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.escuro .card:hover
+{
+    transform: translateY(-6px);                     /* Sobe o cartão ao passar o mouse */
+    box-shadow: 0 12px 28px rgba(0, 118, 182, 0.781); /* Aumenta e destaca a sombra suavemente */
+}
+
 @media (max-width: 600px)
 {
     header 
@@ -199,4 +268,3 @@ img
         grid-template-columns: 1fr;
     }
 }
-
