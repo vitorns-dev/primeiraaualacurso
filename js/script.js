@@ -1,54 +1,65 @@
 console.log("Olá! O JavaScript está funcionando");
 
-const nome = "Vitor Nascimento"; 
 let hora = new Date().getHours();
-console.log(hora);
+console.log("Hora atual:", hora);
 
 let saudacao;
-if (hora < 12)
-{
-    saudacao = "Bom dia";
-} else if (hora < 18)
-{
-    saudacao = "Boa Tarde";
-} else 
-{
-    saudacao = "Boa noite";
-}
-console.log(saudacao);
-
-// Atualiza o título apenas se ele existir na página (evita erros nas páginas que não têm h1)
-const titulo = document.querySelector("h1");
-if (titulo) {
-    titulo.textContent = saudacao + ", olá, eu sou o " + nome;
+if (hora < 12) {
+    saudacao = "Bom dia!";
+} else if (hora < 18) {
+    saudacao = "Boa tarde!";
+} else {
+    saudacao = "Boa noite!";
 }
 
-// --- LÓGICA DO TEMA COM LOCALSTORAGE ---
+// Executa a troca de texto APENAS na página inicial (index.html)
+if (window.location.pathname.includes("index.html") || window.location.pathname.endsWith("/")) {
+    const titulo = document.querySelector("h1");
+    if (titulo) {
+        titulo.textContent = saudacao + " Bem-vindo ao meu portfólio";
+    }
+}
+
+// --- LÓGICA DO BOTÃO DE TEMA COM LOCALSTORAGE ---
 const botao = document.querySelector("#tema");
 
-// 1. Ao carregar a página, verifica se o usuário já havia escolhido o tema claro antes
-if (localStorage.getItem("tema") === "claro") {
-    document.body.classList.add("escuro");
-    if (botao) {
-        botao.textContent = "Modo Escuro";
-    }
-} else {
-    if (botao) {
-        botao.textContent = "Modo Claro";
+function atualizarBotao(eClaro) {
+    if (!botao) return;
+    
+    if (eClaro) {
+        // Se está no modo claro, o botão oferece mudar para o escuro
+        botao.innerHTML = `<span class="icone">🌙</span> <span class="texto-btn">Modo Escuro</span>`;
+    } else {
+        // Se está no modo escuro, o botão oferece mudar para o claro
+        botao.innerHTML = `<span class="icone">☀️</span> <span class="texto-btn">Modo Claro</span>`;
     }
 }
 
-// 2. Quando o botão for clicado, alterna o tema e salva a preferência no navegador
+// 1. Ao carregar a página, verifica o tema salvo no navegador (Padrão: Escuro)
+const temaSalvo = localStorage.getItem("tema");
+
+if (temaSalvo === "claro") {
+    document.body.classList.add("claro");
+    atualizarBotao(true);
+} else {
+    // Se for o primeiro acesso (null) ou estiver gravado como "escuro", inicia no escuro
+    document.body.classList.remove("claro");
+    atualizarBotao(false);
+}
+
+// 2. Evento de clique no botão
 if (botao) {
     botao.addEventListener("click", function () {
-        document.body.classList.toggle("escuro");
+        document.body.classList.toggle("claro");
         
-        if (document.body.classList.contains("escuro")) {
+        const eClaro = document.body.classList.contains("claro");
+        
+        if (eClaro) {
             localStorage.setItem("tema", "claro");
-            botao.textContent = "Modo Escuro";
         } else {
             localStorage.setItem("tema", "escuro");
-            botao.textContent = "Modo Claro";
         }
+        
+        atualizarBotao(eClaro);
     });
 }
