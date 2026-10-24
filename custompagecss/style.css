@@ -1,10 +1,16 @@
 /* =========================================================
-   --- RESET GLOBAL E BLINDAGEM DO TOPO ---
+   --- RESET GLOBAL E FUNDO CONTÍNUO (SEM BLOCOS PRETOS) ---
    ========================================================= */
 html {
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: #121212; /* Fundo escuro padrão na raiz */
+    transition: background-color 0.3s ease;
+}
+
+html.claro {
+    background-color: #f5f1ea; /* Fundo claro padrão na raiz */
 }
 
 * {
@@ -13,17 +19,21 @@ html {
     box-sizing: border-box;
 }
 
-/* =========================================================
-   --- ESTILOS BASE E MODO ESCURO (PADRÃO DO SITE) ---
-   ========================================================= */
-
 body {
     font-family: 'Philosopher', sans-serif;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: transparent; /* Deixa o fundo do html passar para o corpo todo */
     color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém o header no topo e empurra o footer para o fundo */
+    transition: color 0.3s ease;
+}
+
+html.claro body {
+    color: #2b2d42; /* Cor do texto no modo claro */
 }
 
 header {

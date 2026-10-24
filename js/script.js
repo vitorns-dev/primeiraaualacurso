@@ -20,7 +20,7 @@ if (window.location.pathname.includes("index.html") || window.location.pathname.
     }
 }
 
-// --- LÓGICA DO BOTÃO DE TEMA COM LOCALSTORAGE ---
+// --- LÓGICA DO BOTÃO DE TEMA COM LOCALSTORAGE (APLICADO NO HTML) ---
 const botao = document.querySelector("#tema");
 
 function atualizarBotao(eClaro) {
@@ -39,20 +39,19 @@ function atualizarBotao(eClaro) {
 const temaSalvo = localStorage.getItem("tema");
 
 if (temaSalvo === "claro") {
-    document.body.classList.add("claro");
+    document.documentElement.classList.add("claro"); // Aplicado no <html>
     atualizarBotao(true);
 } else {
-    // Se for o primeiro acesso (null) ou estiver gravado como "escuro", inicia no escuro
-    document.body.classList.remove("claro");
+    document.documentElement.classList.remove("claro"); // Removido do <html>
     atualizarBotao(false);
 }
 
 // 2. Evento de clique no botão
 if (botao) {
     botao.addEventListener("click", function () {
-        document.body.classList.toggle("claro");
+        document.documentElement.classList.toggle("claro"); // Alterna no <html>
         
-        const eClaro = document.body.classList.contains("claro");
+        const eClaro = document.documentElement.classList.contains("claro");
         
         if (eClaro) {
             localStorage.setItem("tema", "claro");
