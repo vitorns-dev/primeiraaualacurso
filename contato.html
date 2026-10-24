@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
+        <!-- METADADOS E CODIFICAÇÃO DA PÁGINA -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contato | Vitor Nascimento</title>
+
+        <!-- FONTE EXTERNA (PHILOSOPHER) VIA GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <!-- FOLHA DE ESTILOS CSS -->
         <link rel="stylesheet" href="custompagecss/style.css">
     </head>
     
     <body>
-    <header>
-        <h3 class="title"><strong>Vitor Nascimento</strong></h3>
-        <nav>
-          <a href="index.html">Início</a>
-          <a href="sobre.html">Sobre</a>
-          <a href="contato.html">Contato</a>
-          <a href="projetos.html">Projetos</a>
-        </nav>
-        <button id="tema">Modo Escuro</button>
-    </header>
-    
-    <main>
-        <h1>Entre em contato comigo</h1>
-        <form>
-            <p>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-            </p>
-            <p>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
-            </p>
-            <p>
-             <label for="assunto">Assunto:</label>
-                <select id="assunto" name="assunto">
-                <option>Orçamento</option>
-                <option>Dúvida</option>
-                <option>Outro</option>
-                </select>
-            </p>
-            <p>
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem"></textarea>
-            </p>
-            <button type="submit">Enviar</button>
-        </form>
-    </main>
-    
-    <footer>
-        <p class="copyright">&copy; 2026 Vitor Nascimento. Todos os direitos reservados.</p>
-    </footer>
-    <script src="js/script.js"></script>
+        <!-- CABEÇALHO: LOGO, MENU DE NAVEGAÇÃO E BOTÃO DE TEMA -->
+        <header>
+            <h3 class="title"><strong>Vitor Nascimento</strong></h3>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+                <a href="projetos.html">Projetos</a>
+            </nav>
+            <button id="tema">Modo Escuro</button>
+        </header>
+        
+        <!-- CONTEÚDO PRINCIPAL: FORMULÁRIO DE CONTATO -->
+        <main>
+            <h1>Entre em contato comigo</h1>
+
+            <form>
+                <!-- CAMPO NOME -->
+                <p>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </p>
+
+                <!-- CAMPO EMAIL -->
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+
+                <!-- CAMPO TELEFONE -->
+                <p>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                </p>
+
+                <!-- SELETOR DE ASSUNTO -->
+                <p>
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto">
+                        <option>Orçamento</option>
+                        <option>Dúvida</option>
+                        <option>Outro</option>
+                    </select>
+                </p>
+
+                <!-- CAMPO DE MENSAGEM LIVRE -->
+                <p>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"></textarea>
+                </p>
+
+                <!-- BOTÃO DE ENVIO DO FORMULÁRIO -->
+                <button type="submit">Enviar</button>
+            </form>
+        </main>
+        
+        <!-- RODAPÉ DA PÁGINA -->
+        <footer>
+            <p class="copyright">&copy; 2026 Vitor Nascimento. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- FICHEIRO DE SCRIPT JAVASCRIPT -->
+        <script src="js/script.js"></script>
     </body>
 </html>

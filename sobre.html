@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- METADADOS E CODIFICAÇÃO DA PÁGINA -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mim</title> 
+    <title>Sobre mim | Vitor Nascimento</title> 
+
+    <!-- FONTES EXTERNAS (GOOGLE FONTS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- FOLHA DE ESTILOS CSS -->
     <link rel="stylesheet" href="custompagecss/style.css">
   </head>
     
   <body>
+    <!-- CABEÇALHO: NOME, MENU DE NAVEGAÇÃO E BOTÃO DE TEMA -->
     <header>
       <h3 class="title"><strong>Vitor Nascimento</strong></h3>
       <nav>
@@ -22,15 +28,19 @@
       <button id="tema">Modo Escuro</button>
     </header>
     
+    <!-- CONTEÚDO PRINCIPAL: APRESENTAÇÃO, INTERESSES E TABELA DA SEMANA -->
     <main>
       <h1>Oi, eu sou o Vitor!</h1>
-      <img src="imagens\minha foto.jpg" alt="Foto do Vitor Nascimento" width="80" height="90">
+      <!-- FOTO DE PERFIL (Caminho corrigido para o padrão web) -->
+      <img src="imagens/minha foto.jpg" alt="Foto do Vitor Nascimento" width="80" height="90">
       
+      <!-- CARTÃO: QUEM SOU EU -->
       <section class="card">
         <h2>Quem sou eu?</h2>
         <p>Moro em <strong>São Paulo</strong> e sou estudante de <strong>Ciência da Computação</strong>.</p>
       </section>
       
+      <!-- CARTÃO: O QUE CURTO (INTERESSES) -->
       <section class="card">
         <h2>O que curto?</h2>
         <ul class="gostos"> 
@@ -41,7 +51,7 @@
         </ul>
       </section>
       
-      <!-- AQUI QUE COMEÇA A TABELA -->
+      <!-- CARTÃO: TABELA DE ROTINA DA SEMANA -->
       <section class="card">
         <h2>Minha semana</h2>
         <table>
@@ -55,17 +65,17 @@
           </thead>
           <tbody>
             <tr>
-              <td>Segunda-feira</td>
+              <td class="dia-semana">Segunda-feira</td>
               <td>Estudo de Engenharia</td>
               <td>09:00 às 12:20</td>
             </tr>
             <tr>
-              <td>Quarta-feira</td>
+              <td class="dia-semana">Quarta-feira</td>
               <td>Estudo a linguagem em C#</td>
               <td>09:00 às 11:30</td>
             </tr>
             <tr>
-              <td>Quinta-feira</td>
+              <td class="dia-semana">Quinta-feira</td>
               <td>Estudo a linguagem em C</td>
               <td>09:00 às 12:30</td>
             </tr>
@@ -74,9 +84,12 @@
       </section>
     </main>
     
+    <!-- RODAPÉ DA PÁGINA -->
     <footer>
       <p class="copyright">&copy; 2026 Vitor Nascimento. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- FICHEIRO DE SCRIPT JAVASCRIPT -->
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,41 +1,53 @@
 /* =========================================================
-   --- RESET GLOBAL E FUNDO CONTÍNUO (SEM BLOCOS PRETOS) ---
+   --- RESET GLOBAL E CONFIGURAÇÃO DA RAIZ (HTML/BODY) ---
    ========================================================= */
+
+/* Fundo padrão escuro da página inteira */
 html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Fundo escuro padrão na raiz */
+    background-color: #121212;
     transition: background-color 0.3s ease;
 }
 
+/* Fundo claro da página inteira quando o tema claro está ativo */
 html.claro {
-    background-color: #f5f1ea; /* Fundo claro padrão na raiz */
+    background-color: #f5f1ea;
 }
 
+/* Reseta margens, preenchimentos e alinhamento globalmente */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo estruturado em Flexbox para manter o rodapé sempre no fundo */
 body {
     font-family: 'Philosopher', sans-serif;
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: transparent; /* Deixa o fundo do html passar para o corpo todo */
+    background-color: transparent;
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Mantém o header no topo e empurra o footer para o fundo */
+    justify-content: space-between;
     transition: color 0.3s ease;
 }
 
+/* Ajuste da cor do texto global no modo claro */
 html.claro body {
-    color: #2b2d42; /* Cor do texto no modo claro */
+    color: #2b2d42;
 }
 
+
+/* =========================================================
+   --- CABEÇALHO E NAVEGAÇÃO ---
+   ========================================================= */
+
+/* Barra superior do site */
 header {
     display: flex;
     justify-content: space-between;
@@ -46,7 +58,7 @@ header {
     border-top: none;
 }
 
-/* Nome no Header (Destaque em Amarelo Âmbar) */
+/* Destaque do nome/logo no topo */
 header h3,
 .logo,
 .nome-header {
@@ -56,10 +68,11 @@ header h3,
     transition: color 0.3s ease;
 }
 
+/* Links do menu de navegação */
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #3701f9; /* Azul vibrante */
+    color: #3701f9;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -68,30 +81,43 @@ nav a:hover {
     color: #ffffff;
 }
 
+
+/* =========================================================
+   --- CONTEÚDO PRINCIPAL E TIPOGRAFIA ---
+   ========================================================= */
+
+/* Bloco central de conteúdo das páginas */
 main {
     padding: 2rem;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* --- TÍTULOS --- */
+/* Título principal (H1) */
 h1 {
-    color: #00f5d4; /* Ciano Neon */
+    color: #00f5d4;
     transition: color 0.3s ease;
 }
 
+/* Subtítulos (H2) */
 h2 {
-    color: #a259ff; /* Lilás / Roxo */
+    color: #a259ff;
     transition: color 0.3s ease;
 }
 
-/* --- GRELHA DE PROJETOS E CARTÕES --- */
+
+/* =========================================================
+   --- CARTÕES E GRELHA DE PROJETOS ---
+   ========================================================= */
+
+/* Grelha de 2 colunas para os projetos */
 .projetos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
+/* Estilo base dos cartões */
 .card {
     background-color: #1a1a1a;
     padding: 26px;
@@ -101,12 +127,18 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito de movimento ao passar o rato no cartão */
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 28px rgba(55, 1, 249, 0.45);
 }
 
-/* --- LISTA DE INTERESSES (MODO ESCURO - BADGE CIANO) --- */
+
+/* =========================================================
+   --- LISTAS, BADGES E TABELAS ---
+   ========================================================= */
+
+/* Badges de gostos/interesses */
 .gostos li {
     background-color: rgba(0, 245, 212, 0.1);
     color: #00f5d4;
@@ -119,7 +151,7 @@ h2 {
     font-weight: bold;
 }
 
-/* --- TABELAS (MODO ESCURO) --- */
+/* Estrutura geral de tabelas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -128,6 +160,7 @@ table {
     overflow: hidden;
 }
 
+/* Título/Legenda da tabela */
 caption {
     font-size: 1.15rem;
     font-weight: bold;
@@ -138,6 +171,7 @@ caption {
     transition: color 0.3s ease;
 }
 
+/* Cabeçalho da tabela */
 th {
     background-color: #241442;
     color: #00f5d4;
@@ -147,6 +181,7 @@ th {
     font-weight: bold;
 }
 
+/* Células da tabela */
 td {
     background-color: #1a1a24;
     color: #ffffff;
@@ -154,6 +189,7 @@ td {
     border: 1px dashed #3701f9;
 }
 
+/* Destaque para dias da semana na tabela */
 td.dia-semana {
     color: #a259ff;
     font-weight: bold;
@@ -161,11 +197,17 @@ td.dia-semana {
     border: 1px dashed #a259ff;
 }
 
+/* Efeito ao passar o rato nas linhas da tabela */
 tr:hover td {
     background-color: #262636;
 }
 
-/* --- FORMULÁRIOS --- */
+
+/* =========================================================
+   --- FORMULÁRIOS E BOTÃO DE TEMA ---
+   ========================================================= */
+
+/* Campos de texto, selects e textareas */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -185,6 +227,7 @@ textarea {
     height: 100px;
 }
 
+/* Botão de envio de formulário */
 button[type="submit"] {
     background-color: #3701f9;
     color: #ffffff;
@@ -200,7 +243,7 @@ button[type="submit"]:hover {
     background-color: #2a00c4;
 }
 
-/* --- BOTÃO DE ALTERNÂNCIA DE TEMA --- */
+/* Botão de alternância de modo escuro/claro */
 #tema {
     display: inline-flex;
     align-items: center;
@@ -226,7 +269,11 @@ button[type="submit"]:hover {
     box-shadow: 0 0 18px rgba(55, 1, 249, 0.8);
 }
 
-/* --- FOOTER (MODO ESCURO) --- */
+
+/* =========================================================
+   --- RODAPÉ (FOOTER) ---
+   ========================================================= */
+
 footer {
     text-align: center;
     padding: 1.5rem;
@@ -260,7 +307,7 @@ footer p,
     color: #2b2d42;
 }
 
-/* Nome no Header (Verso do Amarelo Dourado: Âmbar Profundo) */
+/* Nome no cabeçalho (Modo Claro) */
 .claro header h3,
 .claro .logo,
 .claro .nome-header {
@@ -275,16 +322,17 @@ footer p,
     color: #e63946;
 }
 
-/* Título Principal (Verso do Ciano Neon: Ciano Profundo / Petróleo) */
+/* Título principal (Modo Claro) */
 .claro h1 {
     color: #005f73;
 }
 
-/* Subtítulos (Verso do Lilás Neon: Roxo / Violeta Profundo) */
+/* Subtítulos (Modo Claro) */
 .claro h2 {
     color: #560bad;
 }
 
+/* Cartões (Modo Claro) */
 .claro .card {
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(55, 1, 249, 0.12);
@@ -301,7 +349,7 @@ footer p,
     border: none;
 }
 
-/* Tabela e Legenda no Modo Claro (Harmonizadas com h1) */
+/* Tabela e legendas (Modo Claro) */
 .claro caption {
     color: #005f73;
 }
@@ -328,7 +376,7 @@ footer p,
     background-color: #f0ecf8;
 }
 
-/* Formulários no Modo Claro */
+/* Formulários e botões (Modo Claro) */
 .claro input[type="text"],
 .claro input[type="email"],
 .claro input[type="tel"],
@@ -348,7 +396,7 @@ footer p,
     background-color: #2a00c4;
 }
 
-/* Botão de Tema no Modo Claro */
+/* Botão de alternância de tema (Modo Claro) */
 .claro #tema {
     background-color: #ffffff;
     color: #3701f9;
@@ -363,7 +411,7 @@ footer p,
     box-shadow: 0 4px 12px rgba(55, 1, 249, 0.4);
 }
 
-/* Footer no Modo Claro */
+/* Rodapé (Modo Claro) */
 .claro footer p,
 .claro .copyright {
     color: #5c677d;
@@ -371,20 +419,20 @@ footer p,
 
 
 /* =========================================================
-   --- RESPONSIVIDADE (AJUSTE PERFEITO PARA TELEMÓVEL) ---
+   --- RESPONSIVIDADE (MOBILE) ---
    ========================================================= */
 
 @media (max-width: 600px) {
     header {
         display: flex;
-        flex-wrap: wrap;            /* Permite que os elementos se organizem em linhas */
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
         gap: 12px;
     }
 
-    /* 1. Nome fica no canto esquerdo da 1ª linha */
+    /* 1. Nome no canto superior esquerdo */
     header h3,
     .logo,
     .nome-header {
@@ -392,13 +440,13 @@ footer p,
         margin: 0;
     }
 
-    /* 2. Botão de tema fica no canto direito da 1ª linha */
+    /* 2. Botão de tema no canto superior direito */
     #tema {
         order: 2;
         margin: 0;
     }
 
-    /* 3. Navegação desce para a 2ª linha, ocupando toda a largura e centrada */
+    /* 3. Navegação empurrada para a linha de baixo, centrada */
     nav {
         order: 3;
         width: 100%;
@@ -406,12 +454,12 @@ footer p,
         margin-top: 8px;
     }
 
-    /* Ajuste do espaçamento dos links de navegação no telemóvel */
     nav a {
         display: inline-block;
         margin: 4px 8px;
     }
 
+    /* Grelha de projetos passa a ter apenas 1 coluna no telemóvel */
     .projetos {
         grid-template-columns: 1fr;
     }
