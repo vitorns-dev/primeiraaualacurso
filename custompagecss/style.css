@@ -371,16 +371,48 @@ footer p,
 
 
 /* =========================================================
-   --- RESPONSIVIDADE ---
+   --- RESPONSIVIDADE (AJUSTE PERFEITO PARA TELEMÓVEL) ---
    ========================================================= */
 
 @media (max-width: 600px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;            /* Permite que os elementos se organizem em linhas */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        gap: 12px;
+    }
+
+    /* 1. Nome fica no canto esquerdo da 1ª linha */
+    header h3,
+    .logo,
+    .nome-header {
+        order: 1;
+        margin: 0;
+    }
+
+    /* 2. Botão de tema fica no canto direito da 1ª linha */
+    #tema {
+        order: 2;
+        margin: 0;
+    }
+
+    /* 3. Navegação desce para a 2ª linha, ocupando toda a largura e centrada */
+    nav {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    /* Ajuste do espaçamento dos links de navegação no telemóvel */
+    nav a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+
     .projetos {
         grid-template-columns: 1fr;
-    }
-    header {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
     }
 }
